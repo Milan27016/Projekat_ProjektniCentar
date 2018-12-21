@@ -1,0 +1,111 @@
+﻿@model ProjektniCentar_Projekat.Models.Skola
+
+@{
+    ViewBag.Title = "DetailsViewKorisnik";
+}
+
+<h2>DetailsViewKorisnik</h2>
+
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" style="margin: 3px; width: 32.8%" class=" btn btn-success col-lg-3 col-xs-3 hidden-print" onclick="javasrcipt:window.print()"><span style="font-size:larger;"><span style="margin-right: 5px"></span>Stampaj</span></button>
+    </div>
+</div>
+
+<div>
+    <h4>Skola</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivSkole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivSkole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opstina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostanskiBroj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaticniBroj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaticniBroj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PIB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PIB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojRacuna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojRacuna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebStranica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fotografija)
+        </dt>
+
+        <dd>
+            @if (Model.Fotografija == null)
+            {
+                <img src="" alt="@Model.NazivSkole" class="img-responsive" style="width:30%; height:auto" />
+            }
+            else
+            {
+                <img src="@($"/Login/ReadImage/{Model.IDSkola}") " alt="@Model.NazivSkole" class="img-responsive" style="width:30%; height:auto" />
+
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beleske)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beleske)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "ViewKorisnik")
+</p>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProjektniCentar_Projekat.Models.Korisnik>
+@{
+    ViewBag.Title = "ListKorisnik";
+}
+<h2>Lista Korisnika</h2>
+<p>
+    <button type="button" style="margin: 3px; width: 32.8%" class="btn btn-success col-lg-3 col-xs-3" onclick=" location.href='@Url.Action("CreateKorisnik", "Login")' ;return false;"><span style="font-size:larger;"><span style="margin-right: 5px" class="glyphicon glyphicon-plus"></span>Dodaj Korisnika</span></button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PravoPristupa)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PravoPristupa)
+            </td>
+            <td class="col-lg-3">
+                <button type="button" class="btn btn-warning col-lg-3" onclick="location.href='@Url.Action("EditKorisnik", "Login", new {id = item.IDKorisnik })';return false;">Izmeni</button>
+                <button type="button" class="btn btn-danger col-lg-3 col-lg-offset-1" onclick="location.href='@Url.Action("DeleteKorisnik", "Login", new { id = item.IDKorisnik })' ;return false;">Obrisi</button>
+            </td>
+        </tr>
+    }
+
+</table>
+<button type="button" class="btn btn-warning col-lg-1" onclick="history.go(-1); return false;" href="#" style="background-color:mediumpurple">Idi Nazad</button>

@@ -1,0 +1,72 @@
+﻿@model ProjektniCentar_Projekat.Models.Korisnik
+
+@{
+    ViewBag.Title = "DeleteKorisnik";
+}
+
+<h2>Obrisi Korisnika</h2>
+
+<h3>Da li ste sigurni da zelite ovo obrisati?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PravoPristupa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PravoPristupa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger col-lg-1 col-lg-offset-1" /> 
+            <button type="button" class="btn btn-warning col-lg-1" onclick="history.go(-1); return false;" href="#" style="background-color:mediumpurple">Idi Nazad</button>
+        </div>
+    }
+</div>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProjektniCentar_Projekat.Models.Skola>
+
+@{
+    ViewBag.Title = "ViewPregledac";
+}
+
+<h2 class="hidden-print">ViewPregledac</h2>
+
+<div class="row">
+    <div class="col-xs-12">
+
+       
+
+        <button type="button" style="margin: 3px; width: 32.8%" class=" btn btn-success col-lg-3 col-xs-3 hidden-print" onclick="javasrcipt:window.print()"><span style="font-size:larger;"><span style="margin-right: 5px"></span>Stampaj</span></button>
+    </div>
+</div>
+<table class="table table-striped table-hover table-responsive table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NazivSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaticniBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojRacuna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazivSkole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opstina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaticniBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PIB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojRacuna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebStranica)
+        </td>
+        
+        <td class="col-lg-3 hidden-print">
+           
+            <button type="button" class="btn btn-info col-lg-3 col-lg-offset-1" onclick="location.href='@Url.Action("DetailsViewPregledac", "Login", new { id = item.IDSkola })';return false;">Detalji</button>
+            
+        </td>
+    </tr>
+}
+
+</table>
